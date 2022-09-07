@@ -38,6 +38,7 @@ public class Contact {
         return this;
     }
 
+
     public String getName() {
         return name;
     }
@@ -60,5 +61,14 @@ public class Contact {
 
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public String  toString() {
+        return "Contact{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

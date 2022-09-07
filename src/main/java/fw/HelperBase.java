@@ -1,9 +1,13 @@
 package fw;
 
+import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.IOException;
 
 public class HelperBase {
     WebDriver driver;
@@ -37,7 +41,7 @@ public class HelperBase {
         }
     }
 
-    public void pause (int i){
+    public void pause(int i) {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -64,6 +68,7 @@ public class HelperBase {
         }
     }
 
+
     public boolean isHomeComponentPresent() {
         return isElementPresent(By.cssSelector("div:nth-child(2) > div > div"));
     }
@@ -75,5 +80,19 @@ public class HelperBase {
         } catch (NoSuchElementException e) {
             return false;
         }
+    }
+
+    public String takeScreenshot() {
+
+        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File("screenshots/screen" + System.currentTimeMillis() + ".png");
+
+        try {
+            Files.copy(tmp,screenshot);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return screenshot.getAbsolutePath();
+
     }
 }

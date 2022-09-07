@@ -12,8 +12,26 @@ repositories {
 dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
     implementation 'org.testng:testng:7.1.0'
+
+    implementation 'ch.qos.logback:logback-classic:1.4.0'
 }
 
 test {
     useTestNG()
+}
+
+task testy(type: Test) {
+    useTestNG()
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+}
+
+task testUser(type: Test) {
+    useTestNG(){
+        suites 'src/test/resources/testng.xml'
+    }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
 }

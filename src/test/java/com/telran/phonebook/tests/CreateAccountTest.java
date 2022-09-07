@@ -21,7 +21,7 @@ public class CreateAccountTest extends TestBase {
     }
 
     //test
-    @Test
+    @Test (enabled = false)
     public void createAccountPositiveTest() throws InterruptedException {
 
         //assert is registration from dispalayed
@@ -38,7 +38,7 @@ public class CreateAccountTest extends TestBase {
     }
 
 
-    @Test
+    @Test (priority = 1)
     public void createAccountNegativeTestWithoutPassword() {
         //assert is registration from dispalayed
         Assert.assertTrue(app.getUser().isLoginRegFormPresent());
@@ -53,7 +53,7 @@ public class CreateAccountTest extends TestBase {
         Assert.assertTrue(app.getUser().isErrorMessagePresent());
 
     }
-    @Test
+    @Test (priority = 2)
     public void createAccountNegativeTestWithInvalidPassword() {
         //assert is registration from dispalayed
         Assert.assertTrue(app.getUser().isLoginRegFormPresent());
