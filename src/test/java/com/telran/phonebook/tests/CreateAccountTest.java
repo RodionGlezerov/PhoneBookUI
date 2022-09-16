@@ -6,6 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.io.IOException;
+
 public class CreateAccountTest extends TestBase {
 
 
@@ -39,7 +42,9 @@ public class CreateAccountTest extends TestBase {
 
 
     @Test (priority = 1)
-    public void createAccountNegativeTestWithoutPassword() {
+    public void createAccountNegativeTestWithoutPassword() throws IOException, AWTException {
+        app.getContact().deleteScreenCast();
+        app.getContact().startRecording();
         //assert is registration from dispalayed
         Assert.assertTrue(app.getUser().isLoginRegFormPresent());
 
@@ -51,6 +56,8 @@ public class CreateAccountTest extends TestBase {
         //Thread.sleep(1000);
         Assert.assertTrue(app.getUser().isAlertPresent());
         Assert.assertTrue(app.getUser().isErrorMessagePresent());
+        app.getContact().pause(5000);
+        app.getContact().stopRecording();
 
     }
     @Test (priority = 2)

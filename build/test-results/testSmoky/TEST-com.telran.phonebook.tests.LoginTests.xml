@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.telran.phonebook.tests.LoginTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-12T07:56:45" hostname="MacBook-Pro-rodion.local" time="1.421">
+  <properties/>
+  <testcase name="loginPositiveTest" classname="com.telran.phonebook.tests.LoginTests" time="1.421"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="User" verbose="1" >
+    <test name="UserTest" >
+        <classes>
+            <class name="com.telran.phonebook.tests.CreateAccountTest" >
+                <methods>
+                    <exclude name=".*Positive.*"/>
+                </methods>
+            </class>
+            <class name="com.telran.phonebook.tests.LoginTests" />
+        </classes>
+    </test>
+
+</suite>
