@@ -24,6 +24,9 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
 
+    implementation 'com.jayway.restassured:rest-assured:2.9.0'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+
     compileOnly 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
     testCompileOnly 'org.projectlombok:lombok:1.18.16'
